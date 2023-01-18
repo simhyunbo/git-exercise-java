@@ -20,8 +20,38 @@
 
 ### 📄 기능 명세서
 
-|분류||METHOD|End-Point|설명|
-|------|-----|-----|-----|
-|테스트1|테스트2|테스트3|-----|
-|테스트1|테스트2|테스트3|-----|
-|테스트1|테스트2|테스트3|-----|
+|분류|METHOD|URL|기능|
+|------|---|---|---|
+|회원||||
+||POST|/api/v1/users/join|회원 가입|
+||POST|/api/v1/users/login|로그인|
+||PATCH|/api/v1/users/{id} |회원 정보 수정|
+||DELETE|/api/v1/users/{id}|회원 탈퇴|
+||GET|/api/v1/users/{id}|회원 상세 조회|
+|티어||||
+||GET|/api/v1/users/rank/{id}/follow|개인 티어 & 랭킹 조회|
+||GET|/api/v1/users/rank|티어 랭킹 리스트 조회|
+|팔로잉||||
+||POST|/api/v1/users/{id}/follow|팔로잉|
+||DELETE |/api/v1/users/{id}/follow|언팔로잉|
+||GET |/api/v1/users/{id}/following|유저 팔로잉 조회|
+||GET|/api/v1/users/{id}/follower|유저 팔로워 조회|
+|챌린지||||
+||POST|/api/v1/challenges|도전 등록|
+||GET|/api/v1/challenges/{id}|도전 상세 조회|
+||GET|/api/v1/challenges|도전 리스트 조회|
+||PATCH|/api/v1/challenges/{id}|도전 수정|
+||DELETE|/api/v1/challenges/{id}|도전 삭제|
+|리뷰||||
+||POST|/api/v1/books/{isbn}/reviews|도서 리뷰 등록|
+||GET|/api/v1/books/{isbn}/reviews|도서 리뷰 조회|
+||PATCH |/api/v1/books/reviews/{id}|도서 리뷰 수정|
+||DELETE |/api/v1/books/reviews/{id}|도서 리뷰 삭제|
+||POST |/api/v1/books/reviews/{id}/likes|도서 리뷰 좋아요 / 좋아요 취소|
+|책||||
+||GET |/api/v1/books?title={title}&author={author}&category={kdc}|도서 검색|
+||GET |/api/v1/books/{isbn}|도서 상세 조회|
+|알림||||
+||GET|/api/v1/alarms/reviews|팔로잉의 리뷰 등록 알림|
+||GET|/api/v1/alarms/follow|나를 팔로잉하면 알림|
+||GET |/api/v1/alarms/likes|내 리뷰에 좋아요 알림|
